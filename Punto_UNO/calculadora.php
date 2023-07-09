@@ -7,12 +7,13 @@
     <!--CND BOOTSTARP-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!--CND BOOTSTARP-->
-    ---------
+    <link rel="stylesheet" href="css/calculadora.css"><!--Se agrega conexión con css-->
+    <link rel="shortcut icon" href="img/calculadora.png">
     <title>Calculadora</title>
 </head>
 <body>
-<a href="index.html#section-respuestas">   
-        <img class="home" src="img/hogar.png" alt="">
+    <a href="../index.html#section-respuestas">   
+        <img class="home" src="img/home.png" alt="home">
     </a>
     <div class="main-frame-cal">
     <form action="" method="POST">
@@ -22,13 +23,13 @@
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput2">Número 2:</label>
-            <input type="number" ="n2" class="form-control" id="exampleFormControlInput2" placeholder="Digite número 2">
+            <input type="number" name="n2" class="form-control" id="exampleFormControlInput2" placeholder="Digite número 2"><!--Se agrega "name"-->
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Seleccione la operación:</label>
             <select class="form-control" name="tipo" id="exampleFormControlSelect1">
             <option value="1">Suma</option>
-            <option ="2">Resta</option>
+            <option value="2">Resta</option><!--Se agrega "value"-->
             <option value="3">Multiplicación</option>
             <option value="4">División</option>
             </select>
@@ -56,10 +57,15 @@
                 $result = $n1 * $n2;
                 break;
             case '4':
-                $result = $n1 / $n2;
+                if($n2==0){
+                    echo "<h2>El resultado es indefinido, ingrese un valor diferente a 0</h2>";
+                    $result = null;
+                }
+                else{
+                    $result=$n1 / $n2;
+                }
                 break;
         }
-
         echo "<h1>".$result."</h1>";
         #echo "<script>alert(".$result.");</script>";
 

@@ -6,28 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CND BOOTSTARP-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/calculadora.css">
-    <title>Mayor o menor de edad</title>
+    <link rel="stylesheet" href="css/method_get.css">
+    <link rel="shortcut icon" href="img/recoleccion_datos.png">
+    <title>Metodo get</title><!--Se cambio el title-->
 </head>
 <body>
-<a href="index.html#section-respuestas">
-        <img class="home" src="img/hogar.png" alt="">
+<a href="../index.html#section-respuestas">
+        <img class="home" src="img/home.png" alt="home">
     </a>
     <div class="main-frame-cal">
-    <form action="" method="POST">
+    <form action="" method="GET"><!--Se cambio de metodo "POST" a "GET"-->
         <div class="form-group">
             <label for="exampleFormControlInput1">Nombre</label>
-            <input type="text" name="nombre" class="form-control" id="exampleFormControlInput1" placeholder="Digite su Nombre">
+            <input type="text" name="nombre" class="form-control" id="exampleFormControlInput1" placeholder="Por Favor Registre su Nombre"><!--Se modifico el "Por Favor Registre"-->
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">Apellido</label>
-            <input type="text" name="apellido" class="form-control" id="exampleFormControlInput1" placeholder="Digite su Apellido">
+            <input type="text" name="apellido" class="form-control" id="exampleFormControlInput1" placeholder="Por Favor Registre su Apellido">
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">Cédula</label>
-            <input type="text" name="cc" class="form-control" id="exampleFormControlInput1" placeholder="Digite su Cédula">
+            <input type="text" name="cc" class="form-control" id="exampleFormControlInput1" placeholder="Por Favor Registre su Cédula">
         </div>
-        <button type="submit" name="verificar" class="btn btn-outline-info">Evíar</button>
+        <button type="submit" name="verificar" class="btn btn-outline-info">Envíar</button><!--ortografía-->
     </form>
 
     <?php
@@ -36,12 +37,12 @@
     
     if (isset($_GET['verificar'])) {
         $nombre = $_GET['nombre'];
-        $apellido = $_POST['apellido'];
+        $apellido = $_GET['apellido']; //se modifico de "POST" a "GET"
         $cedula = $_GET['cc'];
     
-        echo "Nombre : ".$nombre."<br>";
-        echo "Apellido : ".$apellido."<br>";
-        echo "Cédula : ".$cedula."<br>";
+        echo "El Nombre Registrado es: ".$nombre."<br>";
+        echo "El Apellido Registrado es: ".$apellido."<br>";
+        echo "El número de Cédula es: ".$cedula."<br>";
 
     }
 
